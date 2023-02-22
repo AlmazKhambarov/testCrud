@@ -1,10 +1,33 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  width: 70%;
+  margin: 0 auto; 
+  margin-top: 10%;
+  /* border: 1px solid ; */
+  border-radius: 3px;
+  box-shadow: 10px 5px 5px black;
 }
-
+.forms{
+  display: flex;
+}
+.forms input{
+  margin: 4px;
+  width: 44%;
+}
+.usersList  p {
+ /* border: 2px solid; */
+ /* display: block; 
+ */
+ font-size: 5vh;  
+ /* padding: 3%; */
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+.usersDisplay{
+  border: 1px solid;
+  border-radius: 2px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
