@@ -1,0 +1,9 @@
+.container{
+    display: flex;   
+    border: 1px solid;
+    max-width: 30%;
+    margin-top: 14%;
+}
+.forms input{
+    width: 90%;
+}

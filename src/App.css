@@ -1,18 +1,26 @@
 .App {
   /* text-align: center; */
-  width: 70%;
+  width: 50%;
   margin: 0 auto; 
   margin-top: 10%;
   /* border: 1px solid ; */
   border-radius: 3px;
   box-shadow: 10px 5px 5px black;
 }
-.forms{
-  display: flex;
-}
+
 .forms input{
   margin: 4px;
-  width: 44%;
+}
+.App li{
+  margin-left: 4%;
+  font-size: 4vh;
+}
+.App ul{
+  list-style-type: none;
+}
+.form{
+  display: flex;
+
 }
 .usersList  p {
  /* border: 2px solid; */
@@ -21,15 +29,47 @@
  font-size: 5vh;  
  /* padding: 3%; */
 }
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 .usersDisplay{
   border: 1px solid;
+  display: block;
   border-radius: 2px;
 }
+.userStack{
+  border: 1px solid;
+  border-radius: 10px;
+  margin:10px;  
+  width: 60%;
+}
+.table{
+  /* display: flex; */
+  width:100%;
+  /* font-size: 7vh; */
+}
+.tab li{
+  margin-left: 4%;
+  font-size:4vh;
+}
+.tab ul {
+  list-style-type: none;
+}
+.userName{
+  border: 1px solid;
+  border-radius: 10px;
+  margin:10px;  
+  width: 60%;
+}
+.btn{
+  /* height:40%; */
+  color: black;
+  margin-top: 1%;
 
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
