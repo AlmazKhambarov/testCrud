@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { updateUser } from "../features/Users";
+import { updateUser } from "../reduxToolkit/user/userSlice";
 
-const EditUser = (props) => {
+const EditUser = () => {
   const navigate = useNavigate();
   const params = useParams();
   const dispatch = useDispatch();
   const userList = useSelector((state) => state.users.value);
-  // const {name, age, job} = useSelector(state => state.user);
+
 
   const existingUser = userList.find((user) => user.id == params.id);
-
-  console.log(existingUser);
 
   const { id, name, stack, age, country, isChecked } = existingUser;
 
@@ -25,8 +23,6 @@ const EditUser = (props) => {
     isChecked,
   });
 
-  console.log(values);
-
   const submit = () => {
     dispatch(updateUser(values));
     navigate("/");
@@ -36,19 +32,25 @@ const EditUser = (props) => {
     <div className="App">
       <input
         type="text"
-        onChange={(e) => setValues((prev) => ({ ...prev,  name: e.target.value }))}
+        onChange={(e) =>
+          setValues((prev) => ({ ...prev, name: e.target.value }))
+        }
         className="form-control"
         value={values.name}
       />
       <input
         type="text"
-        onChange={(e) => setValues((prev)=> ({ ...prev, stack: e.target.value }))}
+        onChange={(e) =>
+          setValues((prev) => ({ ...prev, stack: e.target.value }))
+        }
         className="form-control"
         value={values.stack}
       />
       <input
         type="text"
-        onChange={(e) => setValues((prev)=> ({...prev, age: e.target.value}))}
+        onChange={(e) =>
+          setValues((prev) => ({ ...prev, age: e.target.value }))
+        }
         className="form-control"
         value={values.age}
       />
@@ -56,11 +58,11 @@ const EditUser = (props) => {
       <select
         className="form-select form-select-lg mb-2"
         onChange={(e) => {
-          setValues((prev)=> ({ ...prev, country: e.target.value }))
+          setValues((prev) => ({ ...prev, country: e.target.value }));
         }}
         value={values.country}
       >
-        <option value="UZBEKISTAN">COUNTRY</option>
+        {/* <option value="UZBEKISTAN">COUNTRY</option> */}
         <option value="RUSSIA">Russia</option>
         <option value="USA">USA </option>
         <option value="UZBEKISTAN">UZBEKISTAN</option>
@@ -70,7 +72,7 @@ const EditUser = (props) => {
         <input
           type="checkbox"
           onChange={(e) => {
-            setValues((prev)=> ({ ...prev,  isChecked: e.target.checked }));
+            setValues((prev) => ({ ...prev, isChecked: e.target.checked }));
           }}
           checked={values.isChecked}
         />

@@ -2,8 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Table } from 'react-bootstrap';
-
-import { updateUser, deleteUser } from '../features/Users'
+import { deleteUser } from '../reduxToolkit/user/userSlice';
 import '../App.css'
 import { Link, useNavigate } from 'react-router-dom';
 const ListContent = (props) => {
